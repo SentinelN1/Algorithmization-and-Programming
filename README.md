@@ -1,1 +1,0 @@
-# Algorithmization-and-Programming
