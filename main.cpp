@@ -4,7 +4,7 @@
 #define STEP 1e5
 
 #include "VectorGenerator.h"
-// #include "ListGenerator.h"
+#include "ListGenerator.h"
 #include "TimeLogger.h"
 
 int main()
@@ -14,17 +14,25 @@ int main()
     // for all vector lengths.
     int element = 1;
     std::vector<int> vector;
+    std::list<int> list;
 
-    TimeLogger logger(OUTPUT);
+    list = GenerateListInt(INPUT, 10);
 
-    for (int len = STEP; len <= LENGTH; len += STEP)
+    for (const auto &i : list)
     {
-        vector = GenerateVector(INPUT, len);
-        // logger.Find(vector, element);
-        // logger.Log();
-        logger.Sort(vector);
-        logger.Log();
+        std::cout << i << "\n";
     }
+
+    // TimeLogger logger(OUTPUT);
+
+    // for (int len = STEP; len <= LENGTH; len += STEP)
+    // {
+    //     vector = GenerateVectorInt(INPUT, len);
+
+    //     logger.Reset();
+    //     logger.Find(vector, element);
+    //     logger.Log();
+    // }
 
     return 0;
 }

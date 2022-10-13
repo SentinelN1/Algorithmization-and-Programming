@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <vector>
 #include <list>
@@ -29,7 +30,6 @@ public:
 
     void Find(const std::vector<int> &vector, const int &element)
     {
-        // type = "Vector of integers";
         auto start = high_resolution_clock::now();
         std::find(vector.begin(), vector.end(), element);
         auto stop = high_resolution_clock::now();
