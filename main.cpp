@@ -19,215 +19,140 @@ int main()
     // elements, so it only takes around 38 mcs to find a zero
     // for all vector lengths.
 
-    std::vector<int> vectorInt;
-    std::vector<std::string> vectorStr;
-
-    std::list<int> listInt;
-    std::list<std::string> listStr;
-
-    std::deque<int> dequeInt;
-    std::deque<std::string> dequeStr;
-
     TimeLogger logger(OUTPUT);
+    logger.Log("Length;\t Algorithm;\t Container;\t Time;\t Units\n");
 
-    logger.Log("Find in vector of integers (mcs)");
+    auto t0 = high_resolution_clock::now();
+
+    // Find
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorInt = GenerateVectorInt(INPUTINT, len);
-
-        logger.Reset();
-        logger.Find(vectorInt, ELEMINT);
-        logger.Log();
+        std::vector<int> vector = GenerateVectorInt(INPUTINT, len);
+        logger.Find(vector, ELEMINT);
     }
 
-    logger.Log("Find in vector of strings (mcs)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorStr = GenerateVectorStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.Find(vectorStr, ELEMSTR);
-        logger.Log();
+        std::list<int> list = GenerateListInt(INPUTINT, len);
+        logger.Find(list, ELEMINT);
     }
 
-    logger.Log("Find in list of integers (mcs)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listInt = GenerateListInt(INPUTINT, len);
-
-        logger.Reset();
-        logger.Find(listInt, ELEMINT);
-        logger.Log();
+        std::vector<std::string> vector = GenerateVectorStr(INPUTSTR, len);
+        logger.Find(vector, ELEMSTR);
     }
 
-    logger.Log("Find in list of strings (mcs)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listStr = GenerateListStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.Find(listStr, ELEMSTR);
-        logger.Log();
+        std::list<std::string> list = GenerateListStr(INPUTSTR, len);
+        logger.Find(list, ELEMSTR);
     }
 
-    logger.Log("Sort in vector of integers (ms)");
+    // Sort
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorInt = GenerateVectorInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.Sort(vectorInt);
-        logger.Log();
+        std::vector<int> vector = GenerateVectorInt(INPUTINT, len);
+        logger.Sort(vector);
     }
 
-    logger.Log("Sort in vector of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorStr = GenerateVectorStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.Sort(vectorStr);
-        logger.Log();
+        std::list<int> list = GenerateListInt(INPUTINT, len);
+        logger.Sort(list);
     }
 
-    logger.Log("Sort in list of integers (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listInt = GenerateListInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.Sort(listInt);
-        logger.Log();
+        std::vector<std::string> vector = GenerateVectorStr(INPUTSTR, len);
+        logger.Sort(vector);
     }
 
-    logger.Log("Sort in list of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listStr = GenerateListStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.Sort(listStr);
-        logger.Log();
+        std::list<std::string> list = GenerateListStr(INPUTSTR, len);
+        logger.Sort(list);
     }
 
-    logger.Log("Pop front in vector of integers (ms)");
+    // Pop Front
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorInt = GenerateVectorInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopFront(vectorInt);
-        logger.Log();
+        std::vector<int> vector = GenerateVectorInt(INPUTINT, len);
+        logger.PopFront(vector);
     }
 
-    logger.Log("Pop front in vector of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorStr = GenerateVectorStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopFront(vectorStr);
-        logger.Log();
+        std::list<int> list = GenerateListInt(INPUTINT, len);
+        logger.PopFront(list);
     }
 
-    logger.Log("Pop front in list of integers (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listInt = GenerateListInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopFront(listInt);
-        logger.Log();
+        std::deque<int> deque = GenerateDequeInt(INPUTINT, len);
+        logger.PopFront(deque);
     }
 
-    logger.Log("Pop front in list of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listStr = GenerateListStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopFront(listStr);
-        logger.Log();
+        std::vector<std::string> vector = GenerateVectorStr(INPUTSTR, len);
+        logger.PopFront(vector);
     }
 
-    logger.Log("Pop front in deque of integers (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        dequeInt = GenerateDequeInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopFront(dequeInt);
-        logger.Log();
+        std::list<std::string> list = GenerateListStr(INPUTSTR, len);
+        logger.PopFront(list);
     }
 
-    logger.Log("Pop front in deque of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        dequeStr = GenerateDequeStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopFront(dequeStr);
-        logger.Log();
+        std::deque<std::string> deque = GenerateDequeStr(INPUTSTR, len);
+        logger.PopFront(deque);
     }
 
-    logger.Log("Pop back in vector of integers (ms)");
+    // Pop Back
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorInt = GenerateVectorInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopBack(vectorInt);
-        logger.Log();
+        std::vector<int> vector = GenerateVectorInt(INPUTINT, len);
+        logger.PopBack(vector);
     }
 
-    logger.Log("Pop back in vector of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        vectorStr = GenerateVectorStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopBack(vectorStr);
-        logger.Log();
+        std::list<int> list = GenerateListInt(INPUTINT, len);
+        logger.PopBack(list);
     }
 
-    logger.Log("Pop back in list of integers (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listInt = GenerateListInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopBack(listInt);
-        logger.Log();
+        std::deque<int> deque = GenerateDequeInt(INPUTINT, len);
+        logger.PopBack(deque);
     }
 
-    logger.Log("Pop back in list of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        listStr = GenerateListStr(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopBack(listStr);
-        logger.Log();
+        std::vector<std::string> vector = GenerateVectorStr(INPUTSTR, len);
+        logger.PopBack(vector);
     }
 
-    logger.Log("Pop back in deque of integers (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        dequeInt = GenerateDequeInt(INPUTSTR, len);
-
-        logger.Reset();
-        logger.PopBack(dequeInt);
-        logger.Log();
+        std::list<std::string> list = GenerateListStr(INPUTSTR, len);
+        logger.PopBack(list);
     }
 
-    logger.Log("Pop back in deque of strings (ms)");
     for (int len = STEP; len <= LENGTH; len += STEP)
     {
-        dequeStr = GenerateDequeStr(INPUTSTR, len);
-        logger.Reset();
-        logger.PopBack(dequeStr);
-        logger.Log();
+        std::deque<std::string> deque = GenerateDequeStr(INPUTSTR, len);
+        logger.PopBack(deque);
     }
+
+    auto t1 = high_resolution_clock::now();
+    long long int duration = duration_cast<seconds>(t1 - t0).count();
+    logger.Log("Total time:\t");
+    logger.Log(duration);
+    logger.Log(" seconds.\n");
 
     return 0;
 }
