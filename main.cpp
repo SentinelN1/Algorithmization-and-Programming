@@ -1,133 +1,150 @@
+#pragma optimize("", off)
 #define INPUTINT "integers.txt"
 #define INPUTSTR "strings.txt"
-#define OUTPUT "push_back.csv"
+#define OUTPUT "find.csv"
+
+#define FIND
 
 #define LENGTH 1000000
 #define STEP 100000
 
-#define ELEMINT 834
+#define ELEMINT 11
 #define ELEMSTR "TCqfOrIDRFzZJHzihRfJLVCyeBdcciXwv"
 
-#include "VectorGenerator.h"
-#include "ListGenerator.h"
-#include "DequeGenerator.h"
-#include "TimeLogger.h"
+#include "Headers/VectorGenerator.h"
+#include "Headers/ListGenerator.h"
+#include "Headers/DequeGenerator.h"
+#include "Headers/TimeLogger.h"
 
 int main()
 {
-    std::vector<int> vectorInt;
-    std::list<int> listInt;
-    std::deque<int> dequeInt;
-    std::vector<std::string> vectorStr;
-    std::list<std::string> listStr;
-    std::deque<std::string> dequeStr;
+        std::vector<int> vectorInt;
+        std::list<int> listInt;
+        std::deque<int> dequeInt;
+        std::vector<std::string> vectorStr;
+        std::list<std::string> listStr;
+        std::deque<std::string> dequeStr;
 
-    TimeLogger logger(OUTPUT);
-    logger.Log("Length; Algorithm; Container; microseconds\n");
-    for (int len = STEP; len <= LENGTH; len += STEP)
-    {
-        // Find
-        // vectorInt = GenerateVectorInt(INPUTINT, len);
-        // logger.Find(vectorInt, ELEMINT);
+        TimeLogger logger(OUTPUT);
+        logger.Log("Length; Algorithm; Container; microseconds\n");
+        for (int len = STEP; len <= LENGTH; len += STEP)
+        {
 
-        // listInt = GenerateListInt(INPUTINT, len);
-        // logger.Find(listInt, ELEMINT);
+#ifdef FIND
 
-        // vectorStr = GenerateVectorStr(INPUTSTR, len);
-        // logger.Find(vectorStr, ELEMSTR);
+                vectorInt = GenerateVectorInt(INPUTINT, len);
+                logger.Find(vectorInt, ELEMINT);
 
-        // listStr = GenerateListStr(INPUTSTR, len);
-        // logger.Find(listStr, ELEMSTR);
+                listInt = GenerateListInt(INPUTINT, len);
+                logger.Find(listInt, ELEMINT);
 
-        // Sort
-        // vectorInt = GenerateVectorInt(INPUTINT, len);
-        // logger.Sort(vectorInt);
+                vectorStr = GenerateVectorStr(INPUTSTR, len);
+                logger.Find(vectorStr, ELEMSTR);
 
-        // listInt = GenerateListInt(INPUTINT, len);
-        // logger.Sort(listInt);
+                listStr = GenerateListStr(INPUTSTR, len);
+                logger.Find(listStr, ELEMSTR);
 
-        // vectorStr = GenerateVectorStr(INPUTSTR, len);
-        // logger.Sort(vectorStr);
+#endif
+#ifdef SORT
 
-        // listStr = GenerateListStr(INPUTSTR, len);
-        // logger.Sort(listStr);
+                vectorInt = GenerateVectorInt(INPUTINT, len);
+                logger.Sort(vectorInt);
 
-        // Pop Front
-        // vectorInt = GenerateVectorInt(INPUTINT, len);
-        // logger.PopFront(vectorInt);
+                listInt = GenerateListInt(INPUTINT, len);
+                logger.Sort(listInt);
 
-        // listInt = GenerateListInt(INPUTINT, len);
-        // logger.PopFront(listInt);
+                vectorStr = GenerateVectorStr(INPUTSTR, len);
+                logger.Sort(vectorStr);
 
-        // dequeInt = GenerateDequeInt(INPUTINT, len);
-        // logger.PopFront(dequeInt);
+                listStr = GenerateListStr(INPUTSTR, len);
+                logger.Sort(listStr);
 
-        // vectorStr = GenerateVectorStr(INPUTSTR, len);
-        // logger.PopFront(vectorStr);
+#endif
+#ifdef POP_FRONT
 
-        // listStr = GenerateListStr(INPUTSTR, len);
-        // logger.PopFront(listStr);
+                vectorInt = GenerateVectorInt(INPUTINT, len);
+                logger.PopFront(vectorInt);
 
-        // dequeStr = GenerateDequeStr(INPUTSTR, len);
-        // logger.PopFront(dequeStr);
+                listInt = GenerateListInt(INPUTINT, len);
+                logger.PopFront(listInt);
 
-        // Pop Back
-        // vectorInt = GenerateVectorInt(INPUTINT, len);
-        // logger.PopBack(vectorInt);
+                dequeInt = GenerateDequeInt(INPUTINT, len);
+                logger.PopFront(dequeInt);
 
-        // listInt = GenerateListInt(INPUTINT, len);
-        // logger.PopBack(listInt);
+                vectorStr = GenerateVectorStr(INPUTSTR, len);
+                logger.PopFront(vectorStr);
 
-        // dequeInt = GenerateDequeInt(INPUTINT, len);
-        // logger.PopBack(dequeInt);
+                listStr = GenerateListStr(INPUTSTR, len);
+                logger.PopFront(listStr);
 
-        // vectorStr = GenerateVectorStr(INPUTSTR, len);
-        // logger.PopBack(vectorStr);
+                dequeStr = GenerateDequeStr(INPUTSTR, len);
+                logger.PopFront(dequeStr);
 
-        // listStr = GenerateListStr(INPUTSTR, len);
-        // logger.PopBack(listStr);
+#endif
+#ifdef POP_BACK
 
-        // dequeStr = GenerateDequeStr(INPUTSTR, len);
-        // logger.PopBack(dequeStr);
+                vectorInt = GenerateVectorInt(INPUTINT, len);
+                logger.PopBack(vectorInt);
 
-        // Push Front
-        // vectorInt = GenerateVectorInt(INPUTINT, len);
-        // logger.PushFront(vectorInt, ELEMINT);
+                listInt = GenerateListInt(INPUTINT, len);
+                logger.PopBack(listInt);
 
-        // listInt = GenerateListInt(INPUTINT, len);
-        // logger.PushFront(listInt, ELEMINT);
+                dequeInt = GenerateDequeInt(INPUTINT, len);
+                logger.PopBack(dequeInt);
 
-        // dequeInt = GenerateDequeInt(INPUTINT, len);
-        // logger.PushFront(dequeInt, ELEMINT);
+                vectorStr = GenerateVectorStr(INPUTSTR, len);
+                logger.PopBack(vectorStr);
 
-        // vectorStr = GenerateVectorStr(INPUTSTR, len);
-        // logger.PushFront(vectorStr, ELEMSTR);
+                listStr = GenerateListStr(INPUTSTR, len);
+                logger.PopBack(listStr);
 
-        // listStr = GenerateListStr(INPUTSTR, len);
-        // logger.PushFront(listStr, ELEMSTR);
+                dequeStr = GenerateDequeStr(INPUTSTR, len);
+                logger.PopBack(dequeStr);
 
-        // dequeStr = GenerateDequeStr(INPUTSTR, len);
-        // logger.PushFront(dequeStr, ELEMSTR);
+#endif
+#ifdef PUSH_FRONT
 
-        // Push Back
-        vectorInt = GenerateVectorInt(INPUTINT, len);
-        logger.PushBack(vectorInt, ELEMINT);
+                vectorInt = GenerateVectorInt(INPUTINT, len);
+                logger.PushFront(vectorInt, ELEMINT);
 
-        listInt = GenerateListInt(INPUTINT, len);
-        logger.PushBack(listInt, ELEMINT);
+                listInt = GenerateListInt(INPUTINT, len);
+                logger.PushFront(listInt, ELEMINT);
 
-        dequeInt = GenerateDequeInt(INPUTINT, len);
-        logger.PushBack(dequeInt, ELEMINT);
+                dequeInt = GenerateDequeInt(INPUTINT, len);
+                logger.PushFront(dequeInt, ELEMINT);
 
-        vectorStr = GenerateVectorStr(INPUTSTR, len);
-        logger.PushBack(vectorStr, ELEMSTR);
+                vectorStr = GenerateVectorStr(INPUTSTR, len);
+                logger.PushFront(vectorStr, ELEMSTR);
 
-        listStr = GenerateListStr(INPUTSTR, len);
-        logger.PushBack(listStr, ELEMSTR);
+                listStr = GenerateListStr(INPUTSTR, len);
+                logger.PushFront(listStr, ELEMSTR);
 
-        dequeStr = GenerateDequeStr(INPUTSTR, len);
-        logger.PushBack(dequeStr, ELEMSTR);
-    }
+                dequeStr = GenerateDequeStr(INPUTSTR, len);
+                logger.PushFront(dequeStr, ELEMSTR);
 
-    return 0;
+#endif
+#ifdef PUSH_BACK
+
+                vectorInt = GenerateVectorInt(INPUTINT, len);
+                logger.PushBack(vectorInt, ELEMINT);
+
+                listInt = GenerateListInt(INPUTINT, len);
+                logger.PushBack(listInt, ELEMINT);
+
+                dequeInt = GenerateDequeInt(INPUTINT, len);
+                logger.PushBack(dequeInt, ELEMINT);
+
+                vectorStr = GenerateVectorStr(INPUTSTR, len);
+                logger.PushBack(vectorStr, ELEMSTR);
+
+                listStr = GenerateListStr(INPUTSTR, len);
+                logger.PushBack(listStr, ELEMSTR);
+
+                dequeStr = GenerateDequeStr(INPUTSTR, len);
+                logger.PushBack(dequeStr, ELEMSTR);
+
+#endif
+        }
+
+        return 0;
 }
