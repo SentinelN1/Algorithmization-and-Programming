@@ -8,7 +8,11 @@ std::list<int> GenerateListInt(const std::string &path, const int &length)
     std::ifstream input;
     std::list<int> list;
     input.open(path);
-    if (input.is_open())
+    if (!input.is_open())
+    {
+        std::cout << "Unable to open the file.\n";
+    }
+    else
     {
         for (int i = 0; i < length; i++)
         {
@@ -26,7 +30,11 @@ std::list<std::string> GenerateListStr(const std::string &path, const int &lengt
     std::ifstream input;
     std::list<std::string> list;
     input.open(path);
-    if (input.is_open())
+    if (!input.is_open())
+    {
+        std::cout << "Unable to open the file.\n";
+    }
+    else
     {
         for (int i = 0; i < length; i++)
         {

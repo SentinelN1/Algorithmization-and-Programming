@@ -8,7 +8,11 @@ std::deque<int> GenerateDequeInt(const std::string &path, const int &length)
     std::ifstream input;
     std::deque<int> deque;
     input.open(path);
-    if (input.is_open())
+    if (!input.is_open())
+    {
+        std::cout << "Unable to open the file.\n";
+    }
+    else
     {
         for (int i = 0; i < length; i++)
         {
@@ -26,7 +30,11 @@ std::deque<std::string> GenerateDequeStr(const std::string &path, const int &len
     std::ifstream input;
     std::deque<std::string> deque;
     input.open(path);
-    if (input.is_open())
+    if (!input.is_open())
+    {
+        std::cout << "Unable to open the file.\n";
+    }
+    else
     {
         for (int i = 0; i < length; i++)
         {

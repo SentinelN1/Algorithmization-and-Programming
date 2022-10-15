@@ -1,7 +1,7 @@
 #pragma once
+#include <iostream>
 #include <fstream>
 #include <vector>
-#include <iostream>
 
 std::vector<int> GenerateVectorInt(const std::string &path, const int &length)
 {
