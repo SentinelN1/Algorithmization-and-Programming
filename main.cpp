@@ -1,14 +1,16 @@
 #pragma optimize("", off)
 #define INPUTINT "integers.txt"
 #define INPUTSTR "strings.txt"
-#define OUTPUT "find.csv"
+#define OUTPUT "find_vector_int.csv"
 
 #define FIND
 
 #define LENGTH 1000000
 #define STEP 100000
 
-#define ELEMINT 11
+// #define ELEMINT 12274 // First element
+#define ELEMINT -12656 // 500000th element
+// #define ELEMINT 834 // Last element
 #define ELEMSTR "TCqfOrIDRFzZJHzihRfJLVCyeBdcciXwv"
 
 #include "Headers/VectorGenerator.h"
@@ -35,14 +37,14 @@ int main()
                 vectorInt = GenerateVectorInt(INPUTINT, len);
                 logger.Find(vectorInt, ELEMINT);
 
-                listInt = GenerateListInt(INPUTINT, len);
-                logger.Find(listInt, ELEMINT);
+                // listInt = GenerateListInt(INPUTINT, len);
+                // logger.Find(listInt, ELEMINT);
 
-                vectorStr = GenerateVectorStr(INPUTSTR, len);
-                logger.Find(vectorStr, ELEMSTR);
+                // vectorStr = GenerateVectorStr(INPUTSTR, len);
+                // logger.Find(vectorStr, ELEMSTR);
 
-                listStr = GenerateListStr(INPUTSTR, len);
-                logger.Find(listStr, ELEMSTR);
+                // listStr = GenerateListStr(INPUTSTR, len);
+                // logger.Find(listStr, ELEMSTR);
 
 #endif
 #ifdef SORT
