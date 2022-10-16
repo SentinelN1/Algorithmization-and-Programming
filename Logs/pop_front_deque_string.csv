@@ -1,0 +1,11 @@
+Length; Algorithm; Container; microseconds
+100000; Pop Front; deque<string>; 5944
+200000; Pop Front; deque<string>; 11705
+300000; Pop Front; deque<string>; 17301
+400000; Pop Front; deque<string>; 26333
+500000; Pop Front; deque<string>; 28587
+600000; Pop Front; deque<string>; 34441
+700000; Pop Front; deque<string>; 40423
+800000; Pop Front; deque<string>; 45732
+900000; Pop Front; deque<string>; 51157
+1000000; Pop Front; deque<string>; 56606

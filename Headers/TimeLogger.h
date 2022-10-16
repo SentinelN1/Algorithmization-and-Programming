@@ -229,6 +229,103 @@ public:
         output << size << "; Pop Front; deque<string>; " << time << "\n";
     }
 
+    // Pop Front All
+    void PopFrontAll(std::vector<int> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.erase(container.begin());
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Front; vector<int>; " << time << "\n";
+    }
+
+    void PopFrontAll(std::list<int> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_front();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Front; list<int>; " << time << "\n";
+    }
+
+    void PopFrontAll(std::deque<int> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_front();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Front; deque<int>; " << time << "\n";
+    }
+
+    void PopFrontAll(std::vector<std::string> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.erase(container.begin());
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Front All; vector<string>; " << time << "\n";
+    }
+
+    void PopFrontAll(std::list<std::string> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_front();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Front; list<string>; " << time << "\n";
+    }
+
+    void PopFrontAll(std::deque<std::string> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_front();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Front; deque<string>; " << time << "\n";
+    }
+
     // Pop Back
     void PopBack(std::vector<int> &container)
     {
@@ -306,6 +403,103 @@ public:
         auto duration = duration_cast<TIME_INTERVAL>(stop - start);
         time = duration.count();
         output << size << "; Pop Back; deque<string>; " << time << "\n";
+    }
+
+    // Pop Back All
+    void PopBackAll(std::vector<int> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_back();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Back All; vector<int>; " << time << "\n";
+    }
+
+    void PopBackAll(std::list<int> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_back();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Back All; list<int>; " << time << "\n";
+    }
+
+    void PopBackAll(std::deque<int> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_back();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Back All; deque<int>; " << time << "\n";
+    }
+
+    void PopBackAll(std::vector<std::string> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_back();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Back All; vector<string>; " << time << "\n";
+    }
+
+    void PopBackAll(std::list<std::string> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_back();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Back All; list<string>; " << time << "\n";
+    }
+
+    void PopBackAll(std::deque<std::string> &container, const int &n)
+    {
+        size = container.size();
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < n; i++)
+        {
+            container.pop_back();
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<TIME_INTERVAL>(stop - start);
+        time = duration.count();
+        output << size << "; Pop Back All; deque<string>; " << time << "\n";
     }
 
     // Push Front
@@ -386,6 +580,9 @@ public:
         time = duration.count();
         output << size << "; Push Front; deque<string>; " << time << "\n";
     }
+
+    // Push Front All
+    
 
     // Push Back
     void PushBack(std::vector<int> &container, const int &element)

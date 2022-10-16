@@ -1,0 +1,61 @@
+Length; Algorithm; Container; microseconds
+100000; Pop Front; vector<int>; 45937
+100000; Pop Front; list<int>; 6092
+100000; Pop Front; deque<int>; 800
+100000; Pop Front All; vector<string>; 571071
+100000; Pop Front; list<string>; 10649
+100000; Pop Front; deque<string>; 5375
+200000; Pop Front; vector<int>; 86187
+200000; Pop Front; list<int>; 12003
+200000; Pop Front; deque<int>; 1576
+200000; Pop Front All; vector<string>; 1252895
+200000; Pop Front; list<string>; 20663
+200000; Pop Front; deque<string>; 12585
+300000; Pop Front; vector<int>; 115900
+300000; Pop Front; list<int>; 18008
+300000; Pop Front; deque<int>; 2192
+300000; Pop Front All; vector<string>; 3007583
+300000; Pop Front; list<string>; 31082
+300000; Pop Front; deque<string>; 16137
+400000; Pop Front; vector<int>; 145589
+400000; Pop Front; list<int>; 23204
+400000; Pop Front; deque<int>; 3033
+400000; Pop Front All; vector<string>; 2484886
+400000; Pop Front; list<string>; 41411
+400000; Pop Front; deque<string>; 21493
+500000; Pop Front; vector<int>; 196112
+500000; Pop Front; list<int>; 29661
+500000; Pop Front; deque<int>; 3710
+500000; Pop Front All; vector<string>; 4260962
+500000; Pop Front; list<string>; 51433
+500000; Pop Front; deque<string>; 27216
+600000; Pop Front; vector<int>; 200493
+600000; Pop Front; list<int>; 34833
+600000; Pop Front; deque<int>; 4465
+600000; Pop Front All; vector<string>; 4874193
+600000; Pop Front; list<string>; 61796
+600000; Pop Front; deque<string>; 32532
+700000; Pop Front; vector<int>; 242424
+700000; Pop Front; list<int>; 40761
+700000; Pop Front; deque<int>; 5255
+700000; Pop Front All; vector<string>; 5488701
+700000; Pop Front; list<string>; 72666
+700000; Pop Front; deque<string>; 38105
+800000; Pop Front; vector<int>; 322124
+800000; Pop Front; list<int>; 46582
+800000; Pop Front; deque<int>; 5981
+800000; Pop Front All; vector<string>; 5549381
+800000; Pop Front; list<string>; 82836
+800000; Pop Front; deque<string>; 43761
+900000; Pop Front; vector<int>; 346655
+900000; Pop Front; list<int>; 52569
+900000; Pop Front; deque<int>; 7017
+900000; Pop Front All; vector<string>; 6764749
+900000; Pop Front; list<string>; 93517
+900000; Pop Front; deque<string>; 49715
+1000000; Pop Front; vector<int>; 378596
+1000000; Pop Front; list<int>; 58546
+1000000; Pop Front; deque<int>; 7581
+1000000; Pop Front All; vector<string>; 7716362
+1000000; Pop Front; list<string>; 104396
+1000000; Pop Front; deque<string>; 139941
